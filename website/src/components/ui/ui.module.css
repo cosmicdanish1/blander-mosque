@@ -1,0 +1,169 @@
+/* Shared UI pieces for the content pages. */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(76svh, 720px);
+  padding-top: calc(var(--nav-h) + 40px);
+  padding-bottom: clamp(40px, 7vw, 92px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.heroWash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 90% at 20% 0%, transparent 30%, var(--scrim) 100%),
+    linear-gradient(0deg, var(--bg) 2%, transparent 42%),
+    linear-gradient(90deg, var(--scrim), transparent 60%);
+}
+
+.heroInner {
+  max-width: 760px;
+}
+
+.heroTitle {
+  margin-top: 18px;
+  font-size: clamp(42px, 7vw, 86px);
+  color: var(--text);
+}
+
+.heroLede {
+  margin-top: 22px;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* -------- section header -------- */
+.head {
+  max-width: 680px;
+  margin-bottom: clamp(30px, 4vw, 52px);
+}
+
+.headTitle {
+  margin-top: 16px;
+  font-size: clamp(28px, 4vw, 46px);
+  color: var(--text);
+}
+
+.headLede {
+  margin-top: 16px;
+}
+
+/* -------- cards -------- */
+.card {
+  padding: clamp(20px, 2.4vw, 30px);
+  height: 100%;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), border-color 320ms ease;
+}
+
+.cardHover:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in oklch, var(--accent) 50%, var(--glass-border));
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  margin-bottom: 18px;
+  background: color-mix(in oklch, var(--accent) 20%, transparent);
+  color: var(--accent);
+}
+
+.cardTitle {
+  font-size: 20px;
+  color: var(--text);
+}
+
+.cardBody {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* -------- stat -------- */
+.statValue {
+  font-family: var(--font-display-family);
+  font-size: clamp(34px, 5vw, 54px);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.statLabel {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* -------- accordion -------- */
+.accItem {
+  border-bottom: 1px solid var(--border);
+}
+
+.accButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 4px;
+  text-align: left;
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--text);
+}
+
+.accSign {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  color: var(--accent);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accOpen .accSign { transform: rotate(45deg); }
+
+.accPanel {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accPanelOpen { grid-template-rows: 1fr; }
+
+.accPanel > div { overflow: hidden; }
+
+.accBody {
+  padding: 0 4px 24px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .accSign, .accPanel { transition: none; }
+}

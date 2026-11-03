@@ -61,7 +61,7 @@ export function MosqueStory() {
   );
 
   return (
-    <main ref={rootRef} className={styles.story}>
+    <main ref={rootRef} className={`${styles.story} s6-landing`}>
       <a className={styles.skipLink} href="#making">
         Skip particle introduction
       </a>

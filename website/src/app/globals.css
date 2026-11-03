@@ -1,4 +1,11 @@
+/* ============================================================================
+   Sector 6 Jama Masjid — design tokens, theme system, and shared utilities.
+   Four themes share one "sacred" gold/brass accent. Midnight Sapphire is the
+   default and is identical to the original landing-page palette.
+   ========================================================================== */
+
 :root {
+  /* Legacy landing-page token names (kept so the story CSS themes for free). */
   --night: oklch(0.13 0.035 255);
   --deep-sapphire: oklch(0.22 0.07 255);
   --celestial: oklch(0.55 0.12 242);
@@ -6,23 +13,126 @@
   --pearl: oklch(0.93 0.012 85);
   --quiet: oklch(0.76 0.018 245);
   --line: oklch(0.62 0.045 245 / 24%);
+
+  /* Semantic tokens used across the site. */
+  --bg: var(--night);
+  --bg-2: oklch(0.16 0.045 258);
+  --surface: oklch(0.18 0.05 255 / 70%);
+  --surface-solid: oklch(0.18 0.05 255);
+  --primary: var(--celestial);
+  --primary-strong: oklch(0.62 0.13 242);
+  --accent: var(--gold);
+  --accent-strong: oklch(0.76 0.12 80);
+  --text: var(--pearl);
+  --muted: var(--quiet);
+  --border: var(--line);
+
+  /* Glass system. */
+  --glass: oklch(0.2 0.05 255 / 42%);
+  --glass-strong: oklch(0.17 0.05 255 / 66%);
+  --glass-border: oklch(0.8 0.04 245 / 16%);
+  --glass-highlight: oklch(1 0 0 / 10%);
+  --scrim: oklch(0.1 0.03 258 / 55%);
+  --shadow: 0 24px 60px -24px oklch(0.05 0.03 258 / 70%);
+  --glow: 0 0 36px -6px var(--accent);
+
   --font-display-family: var(--font-display), Georgia, serif;
   --font-body-family: var(--font-body), Arial, sans-serif;
+
+  --radius: 18px;
+  --radius-lg: 26px;
+  --container: 1200px;
+  --nav-h: 68px;
+  color-scheme: dark;
+}
+
+/* Emerald & Gold — the classic mosque palette. */
+:root[data-theme="emerald"] {
+  --night: oklch(0.15 0.045 160);
+  --deep-sapphire: oklch(0.22 0.06 158);
+  --celestial: oklch(0.6 0.12 162);
+  --gold: oklch(0.76 0.11 86);
+  --pearl: oklch(0.95 0.015 120);
+  --quiet: oklch(0.8 0.025 150);
+  --line: oklch(0.7 0.06 155 / 24%);
+  --bg-2: oklch(0.18 0.05 160);
+  --surface: oklch(0.21 0.055 160 / 70%);
+  --surface-solid: oklch(0.21 0.055 160);
+  --primary-strong: oklch(0.66 0.13 162);
+  --accent-strong: oklch(0.8 0.12 88);
+  --glass: oklch(0.22 0.05 160 / 42%);
+  --glass-strong: oklch(0.18 0.05 160 / 66%);
+  --glass-border: oklch(0.85 0.05 150 / 16%);
+  --scrim: oklch(0.12 0.04 160 / 55%);
+  --shadow: 0 24px 60px -24px oklch(0.06 0.03 160 / 70%);
+  color-scheme: dark;
+}
+
+/* Persian Teal & Brass — turquoise tilework. */
+:root[data-theme="teal"] {
+  --night: oklch(0.16 0.05 210);
+  --deep-sapphire: oklch(0.24 0.07 205);
+  --celestial: oklch(0.62 0.12 198);
+  --gold: oklch(0.72 0.11 66);
+  --pearl: oklch(0.95 0.015 205);
+  --quiet: oklch(0.8 0.03 205);
+  --line: oklch(0.72 0.07 200 / 24%);
+  --bg-2: oklch(0.19 0.055 208);
+  --surface: oklch(0.23 0.06 205 / 70%);
+  --surface-solid: oklch(0.23 0.06 205);
+  --primary-strong: oklch(0.68 0.13 198);
+  --accent-strong: oklch(0.76 0.12 68);
+  --glass: oklch(0.24 0.06 205 / 42%);
+  --glass-strong: oklch(0.19 0.055 205 / 66%);
+  --glass-border: oklch(0.85 0.06 200 / 16%);
+  --scrim: oklch(0.12 0.04 208 / 55%);
+  --shadow: 0 24px 60px -24px oklch(0.06 0.03 208 / 70%);
+  color-scheme: dark;
+}
+
+/* Desert Marble — a daytime light theme. */
+:root[data-theme="marble"] {
+  --night: oklch(0.95 0.012 85);
+  --deep-sapphire: oklch(0.9 0.02 80);
+  --celestial: oklch(0.55 0.09 50);
+  --gold: oklch(0.6 0.1 72);
+  --pearl: oklch(0.26 0.02 60);
+  --quiet: oklch(0.44 0.03 65);
+  --line: oklch(0.45 0.04 65 / 22%);
+  --bg: oklch(0.95 0.012 85);
+  --bg-2: oklch(0.92 0.02 80);
+  --surface: oklch(1 0.005 85 / 66%);
+  --surface-solid: oklch(0.97 0.012 84);
+  --primary: oklch(0.55 0.09 50);
+  --primary-strong: oklch(0.48 0.1 48);
+  --accent: oklch(0.6 0.1 72);
+  --accent-strong: oklch(0.54 0.11 68);
+  --text: oklch(0.26 0.02 60);
+  --muted: oklch(0.44 0.03 65);
+  --border: oklch(0.45 0.04 65 / 22%);
+  --glass: oklch(1 0.005 85 / 55%);
+  --glass-strong: oklch(1 0.005 85 / 78%);
+  --glass-border: oklch(0.4 0.03 65 / 14%);
+  --glass-highlight: oklch(1 0 0 / 55%);
+  --scrim: oklch(0.98 0.01 85 / 55%);
+  --shadow: 0 24px 60px -26px oklch(0.4 0.04 60 / 34%);
+  color-scheme: light;
 }
 
 html {
-  background: var(--night);
-  scroll-behavior: auto;
+  background: var(--bg);
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100%;
   overflow-x: hidden;
-  background: var(--night);
-  color: var(--pearl);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-body-family);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background 600ms ease, color 600ms ease;
 }
 
 * {
@@ -39,15 +149,179 @@ a {
 
 button {
   border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 ::selection {
   background: oklch(0.72 0.11 78 / 32%);
-  color: var(--pearl);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display-family);
+  font-weight: 400;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+/* -------- layout utilities -------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 40px);
+}
+
+.section {
+  padding-block: clamp(64px, 10vw, 128px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  content: "";
+}
+
+.lede {
+  color: var(--muted);
+  font-size: clamp(16px, 2.2vw, 19px);
+  line-height: 1.7;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+/* -------- glass system -------- */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), inset 0 1px 0 0 var(--glass-highlight);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), inset 0 1px 0 0 var(--glass-highlight);
+  backdrop-filter: blur(26px) saturate(1.4);
+  -webkit-backdrop-filter: blur(26px) saturate(1.4);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass, .glass-strong { background: var(--surface-solid); }
+}
+
+/* -------- buttons -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), background 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  will-change: transform;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: oklch(0.16 0.03 70);
+  box-shadow: 0 10px 30px -10px var(--accent);
+}
+
+.btn-primary:hover { box-shadow: 0 16px 40px -12px var(--accent); }
+
+.btn-ghost {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* -------- scroll reveal (driven by SectionReveal) -------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 760ms cubic-bezier(0.16, 1, 0.3, 1), transform 820ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------- misc -------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(16px, 2.4vw, 26px);
+}
+
+.flip { transform: scaleX(-1); }
+
+/* The cinematic landing keeps a dark stage in the light "Desert Marble" theme
+   so its text stays readable; the 3D scene is tinted warm to match. */
+:root[data-theme="marble"] .s6-landing {
+  --night: oklch(0.17 0.02 60);
+  --deep-sapphire: oklch(0.26 0.03 60);
+  --celestial: oklch(0.62 0.08 55);
+  --gold: oklch(0.74 0.11 78);
+  --pearl: oklch(0.95 0.012 85);
+  --quiet: oklch(0.78 0.02 70);
+  --line: oklch(0.7 0.04 70 / 24%);
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .btn { transition: none; }
+  body { transition: none; }
 }

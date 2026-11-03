@@ -1,0 +1,87 @@
+.board {
+  display: grid;
+  grid-template-columns: 0.95fr 1.3fr;
+  gap: clamp(18px, 2.6vw, 30px);
+  align-items: stretch;
+}
+
+.next {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(26px, 3vw, 40px);
+  overflow: hidden;
+}
+
+.nextTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.liveDot {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.liveDot i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink { 50% { opacity: 0.35; } }
+
+.ring {
+  position: relative;
+  width: min(60%, 220px);
+  aspect-ratio: 1;
+  margin: 4px auto 0;
+  display: grid;
+  place-items: center;
+}
+.ring svg { position: absolute; inset: 0; transform: rotate(-90deg); width: 100%; height: 100%; }
+.ringTrack { fill: none; stroke: var(--border); stroke-width: 5; }
+.ringFill {
+  fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 6px color-mix(in oklch, var(--accent) 60%, transparent));
+}
+.ringInner { text-align: center; }
+.ringLabel { color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.ringName { font-family: var(--font-display-family); font-size: clamp(26px, 4vw, 36px); color: var(--text); margin: 2px 0; }
+.ringCount { font-variant-numeric: tabular-nums; font-size: 18px; color: var(--accent); font-weight: 650; }
+
+.nextMeta { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.nextMeta b { color: var(--text); font-weight: 600; }
+
+.list { padding: clamp(10px, 1.6vw, 18px); display: flex; flex-direction: column; }
+.row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(14px, 1.8vw, 20px) 14px;
+  border-radius: 14px;
+  transition: background 220ms ease;
+}
+.row + .row { border-top: 1px solid var(--border); }
+.rowActive { background: color-mix(in oklch, var(--accent) 12%, transparent); border-top-color: transparent !important; }
+.rowIcon { color: var(--accent); display: grid; place-items: center; }
+.rowName { font-size: 16px; color: var(--text); }
+.rowSub { font-size: 12px; color: var(--muted); }
+.rowTime { font-variant-numeric: tabular-nums; font-size: clamp(16px, 2vw, 19px); color: var(--text); font-weight: 600; }
+.rowActive .rowTime { color: var(--accent); }
+
+.jummah {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin-top: 16px; padding: 18px 20px;
+}
+.jummah b { color: var(--accent); }
+
+@media (max-width: 880px) {
+  .board { grid-template-columns: 1fr; }
+}

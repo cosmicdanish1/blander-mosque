@@ -1,14 +1,16 @@
 "use client";
 
 import { ContactShadows, OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ComponentRef, Suspense, useRef } from "react";
 import {
   ACESFilmicToneMapping,
   Color,
+  Fog,
   SRGBColorSpace,
   Vector3,
 } from "three";
+import { THEME_SCENE, ThemeId } from "@/lib/themes";
 import { AllahParticles } from "./AllahParticles";
 import { AssemblyDust } from "./AssemblyDust";
 import { MosqueModel } from "./MosqueModel";
@@ -88,6 +90,25 @@ function EndOrbit({ progressRef, reducedMotion }: SceneMotionProps) {
   );
 }
 
+/**
+ * Tints the landing scene's background + fog to match the active theme, read
+ * from the <html data-theme> attribute each frame so switching themes never
+ * reloads the 3D scene. Materials and particles stay constant.
+ */
+function SceneTint() {
+  const { scene } = useThree();
+  const current = useRef("");
+  useFrame(() => {
+    const t = (document.documentElement.dataset.theme || "sapphire") as ThemeId;
+    if (t === current.current) return;
+    current.current = t;
+    const col = new Color(THEME_SCENE[t] ?? THEME_SCENE.sapphire);
+    scene.background = col;
+    if (scene.fog instanceof Fog) scene.fog.color = col;
+  });
+  return null;
+}
+
 export function StoryCanvas({ progressRef, reducedMotion }: SceneMotionProps) {
   const smoothRef = useRef(0);
   const smooth: SceneMotionProps = { progressRef: smoothRef, reducedMotion };
@@ -114,6 +135,7 @@ export function StoryCanvas({ progressRef, reducedMotion }: SceneMotionProps) {
         smoothRef={smoothRef}
         reducedMotion={reducedMotion}
       />
+      <SceneTint />
       <fog attach="fog" args={["#08101f", 62, 128]} />
       <ambientLight intensity={0.72} color="#9bbce8" />
       <hemisphereLight args={["#9ac7ff", "#08101f", 1.45]} />
