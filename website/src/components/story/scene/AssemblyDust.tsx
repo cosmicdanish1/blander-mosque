@@ -64,12 +64,12 @@ export function AssemblyDust({ progressRef, reducedMotion }: SceneMotionProps) {
 
   useFrame((state) => {
     const p = progressRef.current;
-    const build = smoothstep(0.225, 0.385, p);
+    const build = smoothstep(0.14, 0.86, p);
     material.uniforms.uBuild.value = build;
     material.uniforms.uTime.value = state.clock.elapsedTime;
     material.uniforms.uOpacity.value = reducedMotion
       ? 0
-      : smoothstep(0.22, 0.25, p) * (1 - smoothstep(0.37, 0.4, p));
+      : smoothstep(0.15, 0.19, p) * (1 - smoothstep(0.82, 0.87, p));
   });
 
   return (

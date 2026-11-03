@@ -87,7 +87,7 @@
 
 .chapter {
   display: flex;
-  min-height: 132svh;
+  min-height: 150svh;
   padding: 15svh clamp(28px, 7vw, 112px);
   align-items: center;
 }
@@ -99,11 +99,7 @@
 }
 
 .chapter:nth-child(2) {
-  min-height: 145svh;
-}
-
-.chapter:nth-child(3) {
-  min-height: 170svh;
+  min-height: 130svh;
 }
 
 .left {
@@ -413,7 +409,7 @@
   }
 
   .chapter {
-    min-height: 112svh;
+    min-height: 130svh;
     padding: 46svh 24px 12svh;
     align-items: flex-end;
     justify-content: flex-start;
@@ -428,13 +424,9 @@
   }
 
   .chapter:nth-child(2) {
-    min-height: 125svh;
+    min-height: 120svh;
     justify-content: center;
     text-align: center;
-  }
-
-  .chapter:nth-child(3) {
-    min-height: 145svh;
   }
 
   .copy,

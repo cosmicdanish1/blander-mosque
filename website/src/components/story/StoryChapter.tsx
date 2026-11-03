@@ -24,7 +24,7 @@ export function StoryChapter({ chapter, index, active }: Props) {
         {index === 0 && (
           <div className={styles.scrollCue} aria-hidden="true">
             <span />
-            Scroll to enter
+            Scroll to build
           </div>
         )}
       </div>

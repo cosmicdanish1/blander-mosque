@@ -61,15 +61,15 @@ test("desktop story renders and reaches each animation phase", async ({ page }) 
   expect(pixels.colored).toBeGreaterThan(80);
   await page.screenshot({ path: "artifacts/desktop-hero.png", fullPage: false });
 
-  await scrollToFraction(page, 0.16);
+  await scrollToFraction(page, 0.12);
   await expect(page.locator("#light")).toHaveAttribute("data-active", "true");
   await page.screenshot({ path: "artifacts/desktop-calligraphy.png", fullPage: false });
 
-  await scrollToFraction(page, 0.31);
+  await scrollToFraction(page, 0.25);
   await expect(page.locator("#making")).toHaveAttribute("data-active", "true");
   await page.screenshot({ path: "artifacts/desktop-construction.png", fullPage: false });
 
-  await scrollToFraction(page, 0.77);
+  await scrollToFraction(page, 0.74);
   await expect(page.locator("#dome")).toHaveAttribute("data-active", "true");
   await page.screenshot({ path: "artifacts/desktop-dome.png", fullPage: false });
 });

@@ -126,10 +126,10 @@ export function AllahParticles({ progressRef, reducedMotion }: SceneMotionProps)
   useFrame((state) => {
     const p = progressRef.current;
     material.uniforms.uTime.value = state.clock.elapsedTime;
-    material.uniforms.uMorph.value = smoothstep(0.105, 0.15, p);
-    material.uniforms.uScatter.value = smoothstep(0.19, 0.235, p);
-    const fadeIn = smoothstep(0.09, 0.125, p);
-    const fadeOut = 1 - smoothstep(0.195, 0.235, p);
+    material.uniforms.uMorph.value = smoothstep(0.05, 0.09, p);
+    material.uniforms.uScatter.value = smoothstep(0.1, 0.13, p);
+    const fadeIn = smoothstep(0.045, 0.07, p);
+    const fadeOut = 1 - smoothstep(0.11, 0.14, p);
     material.uniforms.uOpacity.value = reducedMotion ? 0 : fadeIn * fadeOut;
     if (points.current) points.current.visible = material.uniforms.uOpacity.value > 0.002;
   });

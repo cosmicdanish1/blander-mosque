@@ -19,7 +19,7 @@ This project pairs a reference-based procedural 3D modeling pipeline in Blender 
 - **Procedural Blender Architecture (`scripts/build_mosque.py`)**: Fully scripted 3D reconstruction generating 24 distinct architectural sections, 508 meshes, 180,000+ vertices, and 290,000+ triangles from metric coordinates and photographic references.
 - **Synthesized Procedural Materials & Normals**: Tileable marble cladding, veined courtyard marble, lime plaster, and weathered terrace concrete generated via multi-octave NumPy value noise with central-difference gradient normal maps.
 - **Web-Optimized Draco Pipeline (`scripts/export_web.py`)**: Sections batched and compressed from uncompressed master interchange (25 MB) down to 6.29 MB using `KHR_draco_mesh_compression`, preserving individual section hierarchies and build orders.
-- **Scroll-Driven Assembly Shader (`MosqueModel.tsx`)**: Custom vertex/fragment GLSL clipping shader injected into Three.js `MeshStandardMaterial` (`onBeforeCompile`), procedurally assembling the mosque course-by-course along the Y-axis as the user scrolls.
+- **Style-Aware Build Choreography (`MosqueModel.tsx`)**: Custom vertex/fragment GLSL injected into Three.js `MeshStandardMaterial` (`onBeforeCompile`), assembling each section in the style its craft demands as the user scrolls — masonry laid *brick by brick*, ornament *drawn in light* as an architectural visualisation, and domes, finials & the minaret *emerging in one piece* from their own base.
 - **Dynamic Calligraphy Particle Morphing (`AllahParticles.tsx`)**: 1,900 glowing additive particles that morph from ambient spatial dust into the traditional Arabic calligraphy for *"Allah"* (الله) and smoothly dissolve as architecture emerges.
 - **Cinematic Scrollytelling (`SceneDirector.tsx`)**: 9 curated narrative chapters with smooth Hermite camera interpolation across keyframes tailored independently for desktop and mobile viewports.
 - **Accessibility & Graceful Degradation (WCAG 2.2 AA)**: Native support for `prefers-reduced-motion` (replaces camera flight with static architectural viewpoints and crossfades) and automated WebGL fallback rendering.
@@ -60,7 +60,7 @@ flowchart TD
         StoryData["story-data.ts\n(9 Narrative Chapters)"]
         ScrollHook["useStoryProgress.ts\n(Normalized Scroll Position & Active Chapter)"]
         Director["SceneDirector.tsx\n(Damped Camera Flight Path)"]
-        ModelRenderer["MosqueModel.tsx\n(GLSL Brick Reveal Shader)"]
+        ModelRenderer["MosqueModel.tsx\n(Style-Aware Build Shader)"]
         Calligraphy["AllahParticles.tsx\n(Canvas Text -> 1900 3D Particles)"]
         UIOverlay["StoryChapter.tsx / StoryProgress.tsx\n(Accessible Text & Nav Rail)"]
     end
@@ -144,7 +144,7 @@ blander-mosque/
     │       └── scene/
     │           ├── StoryCanvas.tsx    # Three.js Canvas setup, studio lights, atmospheric fog
     │           ├── SceneDirector.tsx  # Smooth camera interpolation across scroll keyframes
-    │           ├── MosqueModel.tsx    # Draco GLB loader, GLSL brick reveal shader, highlight passes
+    │           ├── MosqueModel.tsx    # Draco GLB loader, style-aware build shader (brick / blueprint / extrude)
     │           ├── AllahParticles.tsx # 1,900 particle calligraphy morphing system
     │           ├── ParticleField.tsx  # Ambient floating spatial particles
     │           ├── AssemblyDust.tsx   # Dynamic dust particles during building reveal
@@ -195,14 +195,14 @@ The web narrative is organized into 9 chapters driven continuously by page scrol
 
 | Chapter | Eyebrow | Title | Focus & Visual Action |
 | :---: | :--- | :--- | :--- |
-| **01** | `Sector 6 · Bhilai` | **Sector 6 Mosque** | Night atmosphere; hero camera angle; glowing celestial gallery. |
-| **02** | `01 · Light` | **A name held in light** | 1,900 ambient particles coalesce into the Arabic calligraphy *"Allah"* (الله), then disperse. |
-| **03** | `02 · Making` | **Raised from the ground** | Camera descends; custom GLSL shader procedurally builds the mosque from foundation to roof. |
-| **04** | `03 · Threshold` | **The front arcade** | Camera moves close to the rhythmic pointed arches and sheltered entrance arcade. |
-| **05** | `04 · Gathering` | **The prayer hall** | Interior-facing framing focusing on congregational alignment and serene proportions. |
-| **06** | `05 · Pattern` | **The jali screens** | Telephoto inspection of the light-filtering geometric stone lattice screens. |
-| **07** | `06 · Crown` | **The ribbed dome** | Upward tilt highlighting the fluted dome and antique brass finial. |
-| **08** | `07 · Landmark` | **The minaret** | Vertical pan following the marble minaret tower, balcony, and crown chhatri. |
+| **01** | `Sector 6 · Bhilai` | **Sector 6 Mosque** | Night atmosphere; hero camera angle; the complete mosque, which then dissolves to begin the build. |
+| **02** | `01 · Light` | **A name held in light** | 1,900 ambient particles coalesce into the Arabic calligraphy *"Allah"* (الله), then disperse as the ground is cleared. |
+| **03** | `02 · Making` | **Built the way it was built** | The build begins. Each section assembles in the style its craft demands — masonry, line-work, or emergence. |
+| **04** | `03 · Threshold` | **Arches drawn in light** | The front arcade *materialises* as an architectural visualisation — a scan line sweeps up each pier and pointed arch. |
+| **05** | `04 · Gathering` | **Walls laid in stone** | The prayer hall is raised *course by course*; masonry climbs brick by brick from the foundation to the terrace. |
+| **06** | `05 · Pattern` | **The jali screens** | Geometric lattice screens are *traced into place* like a working drawing, filtering light through repeating ornament. |
+| **07** | `06 · Crown` | **The ribbed dome rises** | The fluted dome *emerges in one piece*, lifting out of its drum, its antique brass finial rod extending last. |
+| **08** | `07 · Landmark` | **The minaret extends** | The marble tower *draws upward out of its base* as a single shaft; its crown, balcony, and finial extend last. |
 | **09** | `08 · One place` | **Architecture becomes community** | Wide pull-back displaying the complete, luminous complex against deep sapphire space. |
 
 ---
@@ -219,27 +219,31 @@ $$V(x, y) = \exp\left(-\left|\sin\left(6x + 5y + 1.6 \cdot N_{\text{broad}} + 0.
 Normal maps are synthesized directly from procedural height fields using central difference gradients:
 $$\nabla H = \left( -\frac{\partial H}{\partial x} \cdot 1.6, \, -\frac{\partial H}{\partial y} \cdot 1.6, \, 1.0 \right), \quad \vec{N} = \frac{\nabla H}{\|\nabla H\|}$$
 
-### 2. Scroll-Driven Procedural Assembly Shader (`MosqueModel.tsx`)
-Rather than relying on pre-baked bone animations, each architectural mesh's material is modified via Three.js's `onBeforeCompile` hook. The shader calculates fragment world positions and applies a staggered brick-row noise threshold:
+### 2. Style-Aware Build Choreography (`MosqueModel.tsx`)
+Not every element should be laid *brick by brick* — that reads wrong for a dome or a slender finial. Instead of one global reveal, each of the 24 sections is assigned a construction **style** that matches what it physically is, and is sequenced from the ground up by its `build_order`. Each mesh's `MeshStandardMaterial` is modified via Three.js's `onBeforeCompile` hook, with a per-section world bounding box (`uSecMinY`/`uSecMaxY`) and a local `uReveal` driven continuously by scroll.
+
+| Style | Applied to | Behaviour |
+| :--- | :--- | :--- |
+| **`brick`** | Foundation, boundary walls, prayer hall, terrace, minaret base, upper hall | Masonry laid **course by course**, bottom to top, with a staggered per-brick hash and a warm leading-edge glow on freshly-laid stone. |
+| **`blueprint`** | Arcades, pavilions, carved facade, jali screens, gates | **Architectural visualisation** — a scan line sweeps up the element with a holographic line-work preview drawn just ahead of it. |
+| **`extrude`** | Minaret shaft, main dome, finials & rods | Singular solid forms that **emerge in one piece**, physically rising up out of their own base (vertex displacement + a base clip plane). |
 
 ```glsl
-// Calculate staggered brick coordinate
-float mosqueRow = floor((vMosqueWorldPosition.y + 0.5) / 0.42);
-float mosqueStagger = mod(mosqueRow, 2.0) * 0.43;
-vec3 mosqueBrick = floor(vec3(
-  (vMosqueWorldPosition.x + mosqueStagger) / 0.86,
-  mosqueRow,
-  vMosqueWorldPosition.z / 0.86
-));
+float localH = clamp((wy - uSecMinY) / secH, 0.0, 1.0);
 
-// Pseudo-random hash per brick
-float mosqueNoise = fract(sin(dot(mosqueBrick, vec3(12.9898, 78.233, 37.719))) * 43758.5453);
-float mosqueHeight = clamp((vMosqueWorldPosition.y + 0.5) / 27.5, 0.0, 1.0);
-float mosqueThreshold = clamp(uSectionDelay + mosqueHeight * 0.68 + mosqueNoise * 0.13, 0.0, 0.985);
-
-// Discard fragments above current reveal progress
-if (uReveal < mosqueThreshold) discard;
-diffuseColor.a *= uFade;
+if (uStyle < 0.5) {              // brick — laid course by course
+  float row = floor((wy - uSecMinY) / 0.5);
+  vec3 cell = floor(vec3(wx / 0.92 + mod(row, 2.0) * 0.5, row, wz / 0.92));
+  float threshold = localH * 0.82 + hash(cell) * 0.16;
+  if (uReveal < threshold) discard;
+} else if (uStyle < 1.5) {       // blueprint — a scan line draws the form
+  if (uReveal < 0.004) discard;
+  if (localH > uReveal + 0.1) discard;        // nothing above the preview band
+  // ... line-work glow above the cut, solid below it
+} else {                          // extrude — rises out of its base in one piece
+  // vertex: transformed.y -= (1.0 - uReveal) * uEmerge;
+  if (wy < uSecMinY - 0.02) discard;
+}
 ```
 
 ### 3. Arabic Calligraphy Particle Morphing (`AllahParticles.tsx`)
@@ -247,7 +251,7 @@ At runtime, an offscreen HTML5 2D canvas renders the sacred glyph **"الله"**
 
 $$\vec{P}_{\text{formed}} = \operatorname{lerp}(\vec{P}_{\text{initial}}, \, \vec{P}_{\text{target}}, \, \mu) + \hat{d} \cdot \sigma \cdot (2.0 + a_{\text{size}} \cdot 1.4)$$
 
-where $\mu = \operatorname{smoothstep}(0.105, 0.150, \text{progress})$ controls the morph, and $\sigma$ controls scatter dissolution.
+where $\mu = \operatorname{smoothstep}(0.05, 0.09, \text{progress})$ controls the morph, and $\sigma$ controls scatter dissolution.
 
 ---
 

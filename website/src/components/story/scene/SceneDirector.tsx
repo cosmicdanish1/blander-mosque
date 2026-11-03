@@ -11,16 +11,28 @@ type CameraFrame = {
 };
 
 const desktopFrames: CameraFrame[] = [
+  // Hero: the completed place, a wide three-quarter establishing shot.
   { at: 0, position: [29, 17, 48], target: [0, 8.5, 0] },
-  { at: 0.1, position: [21, 14, 44], target: [0, 9, 0] },
-  { at: 0.22, position: [0, 12, 48], target: [0, 10, 0] },
-  { at: 0.39, position: [0, 10, 45], target: [0, 8, 0] },
-  { at: 0.5, position: [-17, 6, 25], target: [-5, 4, 0] },
-  { at: 0.61, position: [1, 6.8, 17], target: [0, 5.5, -2] },
-  { at: 0.72, position: [-9, 11.5, 20], target: [0, 10.5, 0] },
-  { at: 0.83, position: [-11, 18, 25], target: [0, 15, 0] },
-  { at: 0.94, position: [20, 19, 28], target: [9, 17, 0] },
-  { at: 1, position: [32, 19, 51], target: [0, 9, 0] },
+  { at: 0.05, position: [24, 16, 46], target: [0, 9, 0] },
+  // "Allah" light beat: centred and raised while the mosque has dissolved.
+  { at: 0.1, position: [0, 12, 46], target: [0, 10, 0] },
+  // Build begins — drop low to watch the ground and first stone courses.
+  { at: 0.17, position: [19, 5.5, 33], target: [0, 2.5, 0] },
+  { at: 0.26, position: [-18, 7, 31], target: [-2, 4.5, -1] },
+  // Arcades draw in; move closer along the threshold.
+  { at: 0.36, position: [12, 7.5, 22], target: [0, 5, -1] },
+  // Upper hall and pavilions; rise with the structure.
+  { at: 0.46, position: [-14, 11, 26], target: [0, 8, -2] },
+  // Jali screens trace into place.
+  { at: 0.56, position: [4, 10, 18], target: [0, 8, -5] },
+  // The dome lifts out of its drum.
+  { at: 0.66, position: [-9, 13, 22], target: [0, 11, -2] },
+  // The minaret extends; its finial rod comes out last.
+  { at: 0.76, position: [12, 17, 24], target: [9, 15, -2] },
+  // Settle on the near-complete mosque, then pull back to the whole.
+  { at: 0.84, position: [6, 13, 26], target: [2, 10, -2] },
+  { at: 0.92, position: [24, 17, 44], target: [1, 9, -1] },
+  { at: 1, position: [33, 18, 54], target: [0, 8.5, 0] },
 ];
 
 const mobileFrames: CameraFrame[] = desktopFrames.map((frame) => ({
