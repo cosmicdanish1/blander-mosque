@@ -47,6 +47,10 @@ export function SceneDirector({ progressRef, reducedMotion }: SceneMotionProps) 
   const look = useMemo(() => new Vector3(), []);
 
   useFrame((_, delta) => {
+    // At the very end the viewer takes over with free orbit; stop scripting the
+    // camera so the two don't fight. (Mirrors ORBIT_START in StoryCanvas.)
+    if (!reducedMotion && progressRef.current > 0.985) return;
+
     const frames = size.width < 760 ? mobileFrames : desktopFrames;
     let progress = progressRef.current;
     if (reducedMotion) {

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { StoryChapterData } from "./story-data";
 import styles from "./story.module.css";
 
@@ -7,7 +8,13 @@ type Props = {
   active: boolean;
 };
 
-export function StoryChapter({ chapter, index, active }: Props) {
+// Memoised so only the chapter whose `active` flips re-renders during scroll,
+// instead of all nine on every progress tick — keeps the scroll thread light.
+export const StoryChapter = memo(function StoryChapter({
+  chapter,
+  index,
+  active,
+}: Props) {
   return (
     <section
       id={chapter.id}
@@ -30,4 +37,4 @@ export function StoryChapter({ chapter, index, active }: Props) {
       </div>
     </section>
   );
-}
+});

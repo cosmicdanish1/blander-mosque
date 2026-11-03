@@ -22,6 +22,8 @@ This project pairs a reference-based procedural 3D modeling pipeline in Blender 
 - **Style-Aware Build Choreography (`MosqueModel.tsx`)**: Custom vertex/fragment GLSL injected into Three.js `MeshStandardMaterial` (`onBeforeCompile`), assembling each section in the style its craft demands as the user scrolls — masonry laid *brick by brick*, ornament *drawn in light* as an architectural visualisation, and domes, finials & the minaret *emerging in one piece* from their own base.
 - **Dynamic Calligraphy Particle Morphing (`AllahParticles.tsx`)**: 1,900 glowing additive particles that morph from ambient spatial dust into the traditional Arabic calligraphy for *"Allah"* (الله) and smoothly dissolve as architecture emerges.
 - **Cinematic Scrollytelling (`SceneDirector.tsx`)**: 9 curated narrative chapters with smooth Hermite camera interpolation across keyframes tailored independently for desktop and mobile viewports.
+- **Damped Scroll Motion (`StoryCanvas.tsx`)**: A single smoothed progress value eases toward the raw scroll position every frame, so every animation — camera, build reveal, and particles — glides with an Apple-like, momentum-friendly feel instead of snapping. The Three.js tree and chapter cards are memoised so the scene never reconciles on a scroll tick.
+- **Free 360° Orbit Finale (`StoryCanvas.tsx`)**: Once the mosque is fully assembled, the scripted camera hands control to the viewer — drag with mouse or touch to orbit the completed model from any angle; scroll up to replay the build.
 - **Accessibility & Graceful Degradation (WCAG 2.2 AA)**: Native support for `prefers-reduced-motion` (replaces camera flight with static architectural viewpoints and crossfades) and automated WebGL fallback rendering.
 
 ---
@@ -203,7 +205,7 @@ The web narrative is organized into 9 chapters driven continuously by page scrol
 | **06** | `05 · Pattern` | **The jali screens** | Geometric lattice screens are *traced into place* like a working drawing, filtering light through repeating ornament. |
 | **07** | `06 · Crown` | **The ribbed dome rises** | The fluted dome *emerges in one piece*, lifting out of its drum, its antique brass finial rod extending last. |
 | **08** | `07 · Landmark` | **The minaret extends** | The marble tower *draws upward out of its base* as a single shaft; its crown, balcony, and finial extend last. |
-| **09** | `08 · One place` | **Architecture becomes community** | Wide pull-back displaying the complete, luminous complex against deep sapphire space. |
+| **09** | `08 · One place` | **Architecture becomes community** | Wide pull-back to the complete, luminous complex — then the camera unlocks for a free 360° orbit (drag to look around, scroll up to replay). |
 
 ---
 
