@@ -1,8 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useProgress } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { LandingMenu } from "@/components/site/LandingMenu";
 import { StoryChapter } from "./StoryChapter";
 import { StoryProgress } from "./StoryProgress";
 import { WebGLFallback } from "./WebGLFallback";
@@ -84,6 +86,7 @@ export function MosqueStory() {
 
       <div className={styles.atmosphere} aria-hidden="true" />
       <p className={styles.storyLabel}>Architectural story</p>
+      <LandingMenu />
       <StoryProgress progress={progress} activeChapter={activeChapter} />
 
       {interactive && (
@@ -106,7 +109,9 @@ export function MosqueStory() {
 
       <footer className={styles.handoff}>
         <p>End of architectural story</p>
-        <span>Continue into the mosque website</span>
+        <Link href="/prayer-times" className={styles.handoffLink}>
+          Continue into the mosque website →
+        </Link>
       </footer>
     </main>
   );

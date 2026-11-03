@@ -175,8 +175,8 @@
 .themeSwatches span:first-child { margin-left: 0; }
 
 @keyframes menuIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: none; }
+  from { transform: translateY(-6px); }
+  to { transform: none; }
 }
 
 /* ---------- mobile menu ---------- */
@@ -234,8 +234,8 @@
 }
 
 @keyframes sheetIn {
-  from { opacity: 0; transform: translateY(-2%); }
-  to { opacity: 1; transform: none; }
+  from { transform: translateY(-2%); }
+  to { transform: none; }
 }
 
 /* ---------- footer ---------- */

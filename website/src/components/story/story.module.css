@@ -379,6 +379,22 @@
   text-transform: uppercase;
 }
 
+.handoffLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--pearl);
+  font-size: 14px;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.handoffLink:hover {
+  background: oklch(0.72 0.11 78 / 14%);
+  transform: translateY(-2px);
+}
+
 .fallback {
   overflow: hidden;
 }
