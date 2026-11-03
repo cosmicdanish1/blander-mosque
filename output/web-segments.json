@@ -1,0 +1,199 @@
+{
+  "sections": [
+    {
+      "section": "site",
+      "node": "section__site",
+      "mesh": "mesh__site",
+      "buildOrder": 0,
+      "materialCount": 1,
+      "vertices": 56
+    },
+    {
+      "section": "foundation",
+      "node": "section__foundation",
+      "mesh": "mesh__foundation",
+      "buildOrder": 10,
+      "materialCount": 3,
+      "vertices": 336
+    },
+    {
+      "section": "prayer_hall",
+      "node": "section__prayer_hall",
+      "mesh": "mesh__prayer_hall",
+      "buildOrder": 20,
+      "materialCount": 3,
+      "vertices": 2688
+    },
+    {
+      "section": "front_arcade",
+      "node": "section__front_arcade",
+      "mesh": "mesh__front_arcade",
+      "buildOrder": 30,
+      "materialCount": 2,
+      "vertices": 5208
+    },
+    {
+      "section": "left_arcade",
+      "node": "section__left_arcade",
+      "mesh": "mesh__left_arcade",
+      "buildOrder": 31,
+      "materialCount": 1,
+      "vertices": 2968
+    },
+    {
+      "section": "right_arcade",
+      "node": "section__right_arcade",
+      "mesh": "mesh__right_arcade",
+      "buildOrder": 32,
+      "materialCount": 1,
+      "vertices": 2968
+    },
+    {
+      "section": "left_pavilion",
+      "node": "section__left_pavilion",
+      "mesh": "mesh__left_pavilion",
+      "buildOrder": 35,
+      "materialCount": 5,
+      "vertices": 23648
+    },
+    {
+      "section": "right_pavilion",
+      "node": "section__right_pavilion",
+      "mesh": "mesh__right_pavilion",
+      "buildOrder": 36,
+      "materialCount": 5,
+      "vertices": 23648
+    },
+    {
+      "section": "terrace",
+      "node": "section__terrace",
+      "mesh": "mesh__terrace",
+      "buildOrder": 40,
+      "materialCount": 4,
+      "vertices": 1176
+    },
+    {
+      "section": "upper_hall",
+      "node": "section__upper_hall",
+      "mesh": "mesh__upper_hall",
+      "buildOrder": 50,
+      "materialCount": 2,
+      "vertices": 392
+    },
+    {
+      "section": "upper_front",
+      "node": "section__upper_front",
+      "mesh": "mesh__upper_front",
+      "buildOrder": 51,
+      "materialCount": 4,
+      "vertices": 14258
+    },
+    {
+      "section": "jali_left",
+      "node": "section__jali_left",
+      "mesh": "mesh__jali_left",
+      "buildOrder": 55,
+      "materialCount": 3,
+      "vertices": 33240
+    },
+    {
+      "section": "jali_right",
+      "node": "section__jali_right",
+      "mesh": "mesh__jali_right",
+      "buildOrder": 56,
+      "materialCount": 3,
+      "vertices": 40096
+    },
+    {
+      "section": "main_dome",
+      "node": "section__main_dome",
+      "mesh": "mesh__main_dome",
+      "buildOrder": 65,
+      "materialCount": 2,
+      "vertices": 12736
+    },
+    {
+      "section": "main_finial",
+      "node": "section__main_finial",
+      "mesh": "mesh__main_finial",
+      "buildOrder": 68,
+      "materialCount": 1,
+      "vertices": 712
+    },
+    {
+      "section": "minaret_base",
+      "node": "section__minaret_base",
+      "mesh": "mesh__minaret_base",
+      "buildOrder": 45,
+      "materialCount": 2,
+      "vertices": 304
+    },
+    {
+      "section": "minaret_shaft",
+      "node": "section__minaret_shaft",
+      "mesh": "mesh__minaret_shaft",
+      "buildOrder": 60,
+      "materialCount": 2,
+      "vertices": 320
+    },
+    {
+      "section": "minaret_crown",
+      "node": "section__minaret_crown",
+      "mesh": "mesh__minaret_crown",
+      "buildOrder": 75,
+      "materialCount": 5,
+      "vertices": 8128
+    },
+    {
+      "section": "boundary_front",
+      "node": "section__boundary_front",
+      "mesh": "mesh__boundary_front",
+      "buildOrder": 15,
+      "materialCount": 3,
+      "vertices": 10024
+    },
+    {
+      "section": "boundary_left",
+      "node": "section__boundary_left",
+      "mesh": "mesh__boundary_left",
+      "buildOrder": 15,
+      "materialCount": 3,
+      "vertices": 6588
+    },
+    {
+      "section": "boundary_right",
+      "node": "section__boundary_right",
+      "mesh": "mesh__boundary_right",
+      "buildOrder": 15,
+      "materialCount": 3,
+      "vertices": 6588
+    },
+    {
+      "section": "boundary_rear",
+      "node": "section__boundary_rear",
+      "mesh": "mesh__boundary_rear",
+      "buildOrder": 15,
+      "materialCount": 2,
+      "vertices": 112
+    },
+    {
+      "section": "entrance_gate_left",
+      "node": "section__entrance_gate_left",
+      "mesh": "mesh__entrance_gate_left",
+      "buildOrder": 80,
+      "materialCount": 1,
+      "vertices": 1848
+    },
+    {
+      "section": "entrance_gate_right",
+      "node": "section__entrance_gate_right",
+      "mesh": "mesh__entrance_gate_right",
+      "buildOrder": 80,
+      "materialCount": 1,
+      "vertices": 1848
+    }
+  ],
+  "compression": "KHR_draco_mesh_compression",
+  "opacity": "Clone each mesh material before setting opacity to avoid affecting other sections.",
+  "reveal": "Use glTF world Y as the vertical reveal direction. No animation is baked."
+}

@@ -1,0 +1,53 @@
+:root {
+  --night: oklch(0.13 0.035 255);
+  --deep-sapphire: oklch(0.22 0.07 255);
+  --celestial: oklch(0.55 0.12 242);
+  --gold: oklch(0.72 0.11 78);
+  --pearl: oklch(0.93 0.012 85);
+  --quiet: oklch(0.76 0.018 245);
+  --line: oklch(0.62 0.045 245 / 24%);
+  --font-display-family: var(--font-display), Georgia, serif;
+  --font-body-family: var(--font-body), Arial, sans-serif;
+}
+
+html {
+  background: var(--night);
+  scroll-behavior: auto;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  background: var(--night);
+  color: var(--pearl);
+  font-family: var(--font-body-family);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button,
+a {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+::selection {
+  background: oklch(0.72 0.11 78 / 32%);
+  color: var(--pearl);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

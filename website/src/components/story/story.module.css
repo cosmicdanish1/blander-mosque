@@ -1,0 +1,503 @@
+.story {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 58% 40%, oklch(0.29 0.08 248 / 36%), transparent 45%),
+    linear-gradient(155deg, oklch(0.16 0.045 260), var(--night) 46%, oklch(0.11 0.024 244));
+}
+
+.canvasLayer,
+.firstPaint,
+.fallback {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100svh;
+}
+
+.canvasLayer {
+  z-index: -3;
+}
+
+.canvasLayer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.firstPaint {
+  background:
+    radial-gradient(circle at 50% 38%, oklch(0.32 0.09 248 / 26%), transparent 40%),
+    var(--night);
+}
+
+.atmosphere {
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, oklch(0.08 0.025 258 / 54%) 0%, transparent 32%, transparent 70%, oklch(0.08 0.025 258 / 35%) 100%),
+    linear-gradient(0deg, oklch(0.08 0.02 255 / 60%) 0%, transparent 35%);
+}
+
+.storyLabel {
+  position: fixed;
+  z-index: 5;
+  top: 28px;
+  left: 32px;
+  color: var(--quiet);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.storyLabel::before {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin: 0 12px 3px 0;
+  background: var(--gold);
+  content: "";
+}
+
+.skipLink {
+  position: fixed;
+  z-index: 20;
+  top: 16px;
+  left: 50%;
+  padding: 10px 14px;
+  border: 1px solid var(--gold);
+  background: var(--night);
+  color: var(--pearl);
+  transform: translate(-50%, -180%);
+  transition: transform 180ms ease-out;
+}
+
+.skipLink:focus {
+  transform: translate(-50%, 0);
+}
+
+.chapters {
+  position: relative;
+  z-index: 1;
+}
+
+.chapter {
+  display: flex;
+  min-height: 132svh;
+  padding: 15svh clamp(28px, 7vw, 112px);
+  align-items: center;
+}
+
+.chapter:first-child {
+  min-height: 100svh;
+  align-items: flex-end;
+  padding-bottom: 5svh;
+}
+
+.chapter:nth-child(2) {
+  min-height: 145svh;
+}
+
+.chapter:nth-child(3) {
+  min-height: 170svh;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.copy {
+  width: min(100%, 520px);
+  opacity: 0.14;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.right .copy {
+  width: min(100%, 460px);
+}
+
+.active .copy {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  max-width: 13ch;
+  color: var(--pearl);
+  font-family: var(--font-display-family);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.center .copy h2 {
+  margin-inline: auto;
+}
+
+.description {
+  max-width: 58ch;
+  margin-top: 24px;
+  color: var(--quiet);
+  font-size: 16px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.hero .copy {
+  width: min(100%, 880px);
+}
+
+.hero .copy h2 {
+  max-width: none;
+  font-size: 84px;
+  line-height: 0.96;
+}
+
+.hero .description {
+  margin-inline: auto;
+  font-size: 17px;
+}
+
+.quiet .copy h2 {
+  max-width: 10ch;
+  font-size: 60px;
+}
+
+.final .copy {
+  width: min(100%, 720px);
+}
+
+.final .copy h2 {
+  max-width: 15ch;
+  font-size: 58px;
+}
+
+.final .description {
+  margin-inline: auto;
+}
+
+.scrollCue {
+  display: flex;
+  margin-top: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: var(--quiet);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.scrollCue span {
+  position: relative;
+  width: 1px;
+  height: 42px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.scrollCue span::after {
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  content: "";
+  transform: translateY(-100%);
+  animation: descend 2.2s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+@keyframes descend {
+  60%, 100% { transform: translateY(100%); }
+}
+
+.progress {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 28px;
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  height: min(52vh, 420px);
+  align-items: stretch;
+  gap: 13px;
+  transform: translateY(-50%);
+}
+
+.progress p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--pearl);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.progressTotal {
+  color: var(--quiet);
+}
+
+.progressTrack {
+  position: relative;
+  width: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.progressTrack span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--celestial), var(--gold));
+  transform-origin: top;
+}
+
+.chapterDots {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chapterDots button {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.chapterDots button::after {
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--quiet);
+  content: "";
+  transition:
+    background 260ms ease-out,
+    transform 260ms ease-out;
+}
+
+.chapterDots button:hover::after,
+.chapterDots button:focus-visible::after,
+.chapterDots .dotActive::after {
+  background: var(--gold);
+  transform: scale(2);
+}
+
+.chapterDots button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.handoff {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 38svh;
+  padding: 64px clamp(28px, 7vw, 112px);
+  border-top: 1px solid var(--line);
+  align-items: flex-end;
+  justify-content: space-between;
+  background: oklch(0.105 0.025 255 / 84%);
+  color: var(--quiet);
+  font-size: 13px;
+}
+
+.handoff p {
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.fallback {
+  overflow: hidden;
+}
+
+.fallback img {
+  object-fit: cover;
+}
+
+.fallbackShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, oklch(0.1 0.03 255 / 82%), transparent 70%);
+}
+
+.fallbackCopy {
+  position: absolute;
+  right: 8vw;
+  bottom: 8vh;
+  left: 8vw;
+  text-align: center;
+}
+
+.fallbackCopy p {
+  color: var(--gold);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.fallbackCopy h1 {
+  margin-top: 12px;
+  font-family: var(--font-display-family);
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.fallbackCopy span {
+  display: block;
+  margin-top: 16px;
+  color: var(--quiet);
+}
+
+.loadingOverlay {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background: var(--night);
+  color: var(--pearl);
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-out, visibility 0s 300ms;
+}
+
+.loadingActive {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 180ms ease-out;
+}
+
+.loadingOverlay span {
+  color: var(--gold);
+  font-family: var(--font-display-family);
+  font-size: 34px;
+}
+
+.loadingOverlay p {
+  margin-top: 8px;
+  color: var(--quiet);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .storyLabel {
+    top: 20px;
+    left: 20px;
+  }
+
+  .chapter {
+    min-height: 112svh;
+    padding: 46svh 24px 12svh;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .chapter:first-child {
+    min-height: 100svh;
+    padding-bottom: 6svh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .chapter:nth-child(2) {
+    min-height: 125svh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .chapter:nth-child(3) {
+    min-height: 145svh;
+  }
+
+  .copy,
+  .right .copy {
+    width: min(100%, 440px);
+  }
+
+  .copy h2,
+  .quiet .copy h2,
+  .final .copy h2 {
+    margin-inline: 0;
+    font-size: 38px;
+  }
+
+  .center .description,
+  .final .description {
+    margin-inline: 0;
+  }
+
+  .hero .copy h2 {
+    font-size: 56px;
+  }
+
+  .hero .description {
+    margin-inline: auto;
+  }
+
+  .progress {
+    right: 10px;
+    grid-template-columns: 1px auto;
+    height: 40vh;
+    gap: 5px;
+  }
+
+  .progress p {
+    display: none;
+  }
+
+  .chapterDots button {
+    width: 14px;
+  }
+
+  .handoff {
+    min-height: 32svh;
+    padding: 44px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy {
+    transform: none;
+    transition: opacity 220ms ease-out;
+  }
+
+  .scrollCue span::after {
+    animation: none;
+  }
+
+  .chapterDots button::after {
+    transition: none;
+  }
+}

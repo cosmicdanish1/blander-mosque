@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "sections": 24,
+  "webMeshes": 24,
+  "materialPrimitives": 62,
+  "embeddedTextures": 8,
+  "triangles": 330732,
+  "sizeMB": 6.29,
+  "roundtripBounds": [
+    {
+      "section": "boundary_front",
+      "maxBoundsErrorMetres": 0.00021600723266601562
+    },
+    {
+      "section": "boundary_left",
+      "maxBoundsErrorMetres": 0.00014972686767578125
+    },
+    {
+      "section": "boundary_rear",
+      "maxBoundsErrorMetres": 0.0002994537353515625
+    },
+    {
+      "section": "boundary_right",
+      "maxBoundsErrorMetres": 0.00014972686767578125
+    },
+    {
+      "section": "entrance_gate_left",
+      "maxBoundsErrorMetres": 1.0371208190917969e-05
+    },
+    {
+      "section": "entrance_gate_right",
+      "maxBoundsErrorMetres": 1.0251998901367188e-05
+    },
+    {
+      "section": "foundation",
+      "maxBoundsErrorMetres": 0.000152587890625
+    },
+    {
+      "section": "front_arcade",
+      "maxBoundsErrorMetres": 3.910064697265625e-05
+    },
+    {
+      "section": "jali_left",
+      "maxBoundsErrorMetres": 3.5762786865234375e-05
+    },
+    {
+      "section": "jali_right",
+      "maxBoundsErrorMetres": 3.5762786865234375e-05
+    },
+    {
+      "section": "left_arcade",
+      "maxBoundsErrorMetres": 2.09808349609375e-05
+    },
+    {
+      "section": "left_pavilion",
+      "maxBoundsErrorMetres": 3.337860107421875e-05
+    },
+    {
+      "section": "main_dome",
+      "maxBoundsErrorMetres": 2.09808349609375e-05
+    },
+    {
+      "section": "main_finial",
+      "maxBoundsErrorMetres": 9.5367431640625e-07
+    },
+    {
+      "section": "minaret_base",
+      "maxBoundsErrorMetres": 5.7220458984375e-06
+    },
+    {
+      "section": "minaret_crown",
+      "maxBoundsErrorMetres": 4.76837158203125e-07
+    },
+    {
+      "section": "minaret_shaft",
+      "maxBoundsErrorMetres": 8.0108642578125e-05
+    },
+    {
+      "section": "prayer_hall",
+      "maxBoundsErrorMetres": 9.5367431640625e-05
+    },
+    {
+      "section": "right_arcade",
+      "maxBoundsErrorMetres": 2.1457672119140625e-05
+    },
+    {
+      "section": "right_pavilion",
+      "maxBoundsErrorMetres": 3.4332275390625e-05
+    },
+    {
+      "section": "site",
+      "maxBoundsErrorMetres": 0.00018310546875
+    },
+    {
+      "section": "terrace",
+      "maxBoundsErrorMetres": 0.0001544952392578125
+    },
+    {
+      "section": "upper_front",
+      "maxBoundsErrorMetres": 9.1552734375e-05
+    },
+    {
+      "section": "upper_hall",
+      "maxBoundsErrorMetres": 6.198883056640625e-05
+    }
+  ]
+}

@@ -1,0 +1,961 @@
+{
+  "asset": "Sector 6 Mosque, Bhilai",
+  "version": 1,
+  "units": "metres",
+  "accuracy": "Photo-based visual reconstruction; measurements and unseen rear approximate.",
+  "blender_up": "Z",
+  "gltf_up": "Y",
+  "gltf_front": "+Z",
+  "excluded": [
+    "trees",
+    "people",
+    "cars",
+    "motorcycles",
+    "wires",
+    "flags",
+    "adjacent buildings",
+    "loose clutter"
+  ],
+  "sections": [
+    {
+      "id": "site",
+      "buildOrder": 0,
+      "objects": [
+        "Site_plinth.003"
+      ],
+      "boundsBlender": {
+        "min": [
+          -23.0,
+          -11.0,
+          -0.4300000071525574
+        ],
+        "max": [
+          23.0,
+          25.0,
+          -0.030000001192092896
+        ]
+      }
+    },
+    {
+      "id": "foundation",
+      "buildOrder": 10,
+      "objects": [
+        "Courtyard_foundation.003",
+        "Courtyard_marble.003",
+        "Entrance_step.003",
+        "Front_step_-1.003",
+        "Front_step_1.003",
+        "Main_floor_plinth.003"
+      ],
+      "boundsBlender": {
+        "min": [
+          -21.5,
+          -10.0,
+          -0.07999999821186066
+        ],
+        "max": [
+          21.5,
+          22.0,
+          0.5099999904632568
+        ]
+      }
+    },
+    {
+      "id": "prayer_hall",
+      "buildOrder": 20,
+      "objects": [
+        "Column_foot_-13.0_12.004",
+        "Column_foot_-13.0_18.003",
+        "Column_foot_-13.0_5.004",
+        "Column_foot_-4.35_12.004",
+        "Column_foot_-4.35_18.003",
+        "Column_foot_-4.35_5.004",
+        "Column_foot_-8.7_12.004",
+        "Column_foot_-8.7_18.003",
+        "Column_foot_-8.7_5.004",
+        "Column_foot_0_12.004",
+        "Column_foot_0_18.003",
+        "Column_foot_0_5.004",
+        "Column_foot_13.0_12.004",
+        "Column_foot_13.0_18.003",
+        "Column_foot_13.0_5.004",
+        "Column_foot_4.35_12.004",
+        "Column_foot_4.35_18.003",
+        "Column_foot_4.35_5.004",
+        "Column_foot_8.7_12.004",
+        "Column_foot_8.7_18.003",
+        "Column_foot_8.7_5.004",
+        "Hall_ceiling.003",
+        "Hall_column_-13.0_12.004",
+        "Hall_column_-13.0_18.003",
+        "Hall_column_-13.0_5.004",
+        "Hall_column_-4.35_12.004",
+        "Hall_column_-4.35_18.003",
+        "Hall_column_-4.35_5.004",
+        "Hall_column_-8.7_12.004",
+        "Hall_column_-8.7_18.003",
+        "Hall_column_-8.7_5.004",
+        "Hall_column_0_12.004",
+        "Hall_column_0_18.003",
+        "Hall_column_0_5.004",
+        "Hall_column_13.0_12.004",
+        "Hall_column_13.0_18.003",
+        "Hall_column_13.0_5.004",
+        "Hall_column_4.35_12.004",
+        "Hall_column_4.35_18.003",
+        "Hall_column_4.35_5.004",
+        "Hall_column_8.7_12.004",
+        "Hall_column_8.7_18.003",
+        "Hall_column_8.7_5.004",
+        "Hall_rear_dado.003",
+        "Prayer_hall_floor.003",
+        "Rear_wall.003",
+        "Side_hall_wall_-14.5",
+        "Side_hall_wall_14.5"
+      ],
+      "boundsBlender": {
+        "min": [
+          -18.200000762939453,
+          1.5,
+          0.45500001311302185
+        ],
+        "max": [
+          18.200000762939453,
+          20.5,
+          5.505000114440918
+        ]
+      }
+    },
+    {
+      "id": "front_arcade",
+      "buildOrder": 30,
+      "objects": [
+        "Front_arcade_cornice",
+        "Front_arcade_drip_edge",
+        "Front_pointed_bay_01",
+        "Front_pointed_bay_01_raised_arch_outline",
+        "Front_pointed_bay_02",
+        "Front_pointed_bay_02_raised_arch_outline",
+        "Front_pointed_bay_03",
+        "Front_pointed_bay_03_raised_arch_outline",
+        "Front_pointed_bay_04",
+        "Front_pointed_bay_04_raised_arch_outline",
+        "Front_pointed_bay_05",
+        "Front_pointed_bay_05_raised_arch_outline",
+        "Front_pointed_bay_06",
+        "Front_pointed_bay_06_raised_arch_outline",
+        "Front_pointed_bay_07",
+        "Front_pointed_bay_07_raised_arch_outline"
+      ],
+      "boundsBlender": {
+        "min": [
+          -15.300000190734863,
+          -0.800000011920929,
+          0.44999998807907104
+        ],
+        "max": [
+          15.300000190734863,
+          0.4699999988079071,
+          5.824999809265137
+        ]
+      }
+    },
+    {
+      "id": "left_arcade",
+      "buildOrder": 31,
+      "objects": [
+        "left_arcade_bay_01",
+        "left_arcade_bay_01_raised_arch_outline",
+        "left_arcade_bay_02",
+        "left_arcade_bay_02_raised_arch_outline",
+        "left_arcade_bay_03",
+        "left_arcade_bay_03_raised_arch_outline",
+        "left_arcade_bay_04",
+        "left_arcade_bay_04_raised_arch_outline",
+        "left_arcade_cornice"
+      ],
+      "boundsBlender": {
+        "min": [
+          -18.459999084472656,
+          3.4499988555908203,
+          0.44999998807907104
+        ],
+        "max": [
+          -17.43000030517578,
+          19.850000381469727,
+          5.769999980926514
+        ]
+      }
+    },
+    {
+      "id": "right_arcade",
+      "buildOrder": 32,
+      "objects": [
+        "right_arcade_bay_01",
+        "right_arcade_bay_01_raised_arch_outline",
+        "right_arcade_bay_02",
+        "right_arcade_bay_02_raised_arch_outline",
+        "right_arcade_bay_03",
+        "right_arcade_bay_03_raised_arch_outline",
+        "right_arcade_bay_04",
+        "right_arcade_bay_04_raised_arch_outline",
+        "right_arcade_cornice"
+      ],
+      "boundsBlender": {
+        "min": [
+          17.42999839782715,
+          3.4499998092651367,
+          0.44999998807907104
+        ],
+        "max": [
+          18.459999084472656,
+          19.850000381469727,
+          5.769999980926514
+        ]
+      }
+    },
+    {
+      "id": "left_pavilion",
+      "buildOrder": 35,
+      "objects": [
+        "left_pavilion_blind_arch",
+        "left_pavilion_body",
+        "left_pavilion_cornice",
+        "left_pavilion_cornice_lip",
+        "left_pavilion_crescent_relief_-0.87",
+        "left_pavilion_crescent_relief_0.87",
+        "left_pavilion_edge_tooth_-1.91_0",
+        "left_pavilion_edge_tooth_-1.91_1",
+        "left_pavilion_edge_tooth_-1.91_10",
+        "left_pavilion_edge_tooth_-1.91_11",
+        "left_pavilion_edge_tooth_-1.91_12",
+        "left_pavilion_edge_tooth_-1.91_13",
+        "left_pavilion_edge_tooth_-1.91_14",
+        "left_pavilion_edge_tooth_-1.91_2",
+        "left_pavilion_edge_tooth_-1.91_3",
+        "left_pavilion_edge_tooth_-1.91_4",
+        "left_pavilion_edge_tooth_-1.91_5",
+        "left_pavilion_edge_tooth_-1.91_6",
+        "left_pavilion_edge_tooth_-1.91_7",
+        "left_pavilion_edge_tooth_-1.91_8",
+        "left_pavilion_edge_tooth_-1.91_9",
+        "left_pavilion_edge_tooth_1.91_0",
+        "left_pavilion_edge_tooth_1.91_1",
+        "left_pavilion_edge_tooth_1.91_10",
+        "left_pavilion_edge_tooth_1.91_11",
+        "left_pavilion_edge_tooth_1.91_12",
+        "left_pavilion_edge_tooth_1.91_13",
+        "left_pavilion_edge_tooth_1.91_14",
+        "left_pavilion_edge_tooth_1.91_2",
+        "left_pavilion_edge_tooth_1.91_3",
+        "left_pavilion_edge_tooth_1.91_4",
+        "left_pavilion_edge_tooth_1.91_5",
+        "left_pavilion_edge_tooth_1.91_6",
+        "left_pavilion_edge_tooth_1.91_7",
+        "left_pavilion_edge_tooth_1.91_8",
+        "left_pavilion_edge_tooth_1.91_9",
+        "left_pavilion_foot",
+        "left_pavilion_frieze_00",
+        "left_pavilion_frieze_01",
+        "left_pavilion_frieze_02",
+        "left_pavilion_frieze_03",
+        "left_pavilion_frieze_04",
+        "left_pavilion_frieze_05",
+        "left_pavilion_frieze_06",
+        "left_pavilion_frieze_07",
+        "left_pavilion_frieze_08",
+        "left_pavilion_frieze_09",
+        "left_pavilion_frieze_10",
+        "left_pavilion_frieze_11",
+        "left_pavilion_frieze_12",
+        "left_pavilion_frieze_13",
+        "left_pavilion_medallion_mosque",
+        "left_pavilion_medallion_ring",
+        "left_pavilion_recess_frame",
+        "left_pavilion_side_blind_arch",
+        "left_pavilion_side_jali",
+        "left_pavilion_side_recess_frame",
+        "left_pavilion_side_window_frame",
+        "left_pavilion_side_window_recess",
+        "left_pavilion_star_jali",
+        "left_pavilion_window_border",
+        "left_pavilion_window_recess"
+      ],
+      "boundsBlender": {
+        "min": [
+          -18.969999313354492,
+          -0.7900000214576721,
+          0.41999998688697815
+        ],
+        "max": [
+          -14.029999732971191,
+          4.050000190734863,
+          6.429999828338623
+        ]
+      }
+    },
+    {
+      "id": "right_pavilion",
+      "buildOrder": 36,
+      "objects": [
+        "right_pavilion_blind_arch",
+        "right_pavilion_body",
+        "right_pavilion_cornice",
+        "right_pavilion_cornice_lip",
+        "right_pavilion_crescent_relief_-0.87",
+        "right_pavilion_crescent_relief_0.87",
+        "right_pavilion_edge_tooth_-1.91_0",
+        "right_pavilion_edge_tooth_-1.91_1",
+        "right_pavilion_edge_tooth_-1.91_10",
+        "right_pavilion_edge_tooth_-1.91_11",
+        "right_pavilion_edge_tooth_-1.91_12",
+        "right_pavilion_edge_tooth_-1.91_13",
+        "right_pavilion_edge_tooth_-1.91_14",
+        "right_pavilion_edge_tooth_-1.91_2",
+        "right_pavilion_edge_tooth_-1.91_3",
+        "right_pavilion_edge_tooth_-1.91_4",
+        "right_pavilion_edge_tooth_-1.91_5",
+        "right_pavilion_edge_tooth_-1.91_6",
+        "right_pavilion_edge_tooth_-1.91_7",
+        "right_pavilion_edge_tooth_-1.91_8",
+        "right_pavilion_edge_tooth_-1.91_9",
+        "right_pavilion_edge_tooth_1.91_0",
+        "right_pavilion_edge_tooth_1.91_1",
+        "right_pavilion_edge_tooth_1.91_10",
+        "right_pavilion_edge_tooth_1.91_11",
+        "right_pavilion_edge_tooth_1.91_12",
+        "right_pavilion_edge_tooth_1.91_13",
+        "right_pavilion_edge_tooth_1.91_14",
+        "right_pavilion_edge_tooth_1.91_2",
+        "right_pavilion_edge_tooth_1.91_3",
+        "right_pavilion_edge_tooth_1.91_4",
+        "right_pavilion_edge_tooth_1.91_5",
+        "right_pavilion_edge_tooth_1.91_6",
+        "right_pavilion_edge_tooth_1.91_7",
+        "right_pavilion_edge_tooth_1.91_8",
+        "right_pavilion_edge_tooth_1.91_9",
+        "right_pavilion_foot",
+        "right_pavilion_frieze_00",
+        "right_pavilion_frieze_01",
+        "right_pavilion_frieze_02",
+        "right_pavilion_frieze_03",
+        "right_pavilion_frieze_04",
+        "right_pavilion_frieze_05",
+        "right_pavilion_frieze_06",
+        "right_pavilion_frieze_07",
+        "right_pavilion_frieze_08",
+        "right_pavilion_frieze_09",
+        "right_pavilion_frieze_10",
+        "right_pavilion_frieze_11",
+        "right_pavilion_frieze_12",
+        "right_pavilion_frieze_13",
+        "right_pavilion_medallion_mosque",
+        "right_pavilion_medallion_ring",
+        "right_pavilion_recess_frame",
+        "right_pavilion_side_blind_arch",
+        "right_pavilion_side_jali",
+        "right_pavilion_side_recess_frame",
+        "right_pavilion_side_window_frame",
+        "right_pavilion_side_window_recess",
+        "right_pavilion_star_jali",
+        "right_pavilion_window_border",
+        "right_pavilion_window_recess"
+      ],
+      "boundsBlender": {
+        "min": [
+          14.029999732971191,
+          -0.7900000214576721,
+          0.41999998688697815
+        ],
+        "max": [
+          18.969999313354492,
+          4.050000190734863,
+          6.429999828338623
+        ]
+      }
+    },
+    {
+      "id": "terrace",
+      "buildOrder": 40,
+      "objects": [
+        "Roof_front_low_pier_-12",
+        "Roof_front_low_pier_-4",
+        "Roof_front_low_pier_-8",
+        "Roof_front_low_pier_0",
+        "Roof_front_low_pier_12",
+        "Roof_front_low_pier_4",
+        "Roof_front_low_pier_8",
+        "Terrace_rear_cap",
+        "Terrace_rear_parapet",
+        "Terrace_side_cap_-18.2",
+        "Terrace_side_cap_18.2",
+        "Terrace_side_parapet_-18.2",
+        "Terrace_side_parapet_18.2",
+        "Terrace_structural_slab",
+        "Terrace_weathered_surface",
+        "Upper_terrace_access_step_00",
+        "Upper_terrace_access_step_01",
+        "Upper_terrace_access_step_02",
+        "Upper_terrace_access_step_03",
+        "Upper_terrace_access_step_04",
+        "Upper_terrace_access_step_05"
+      ],
+      "boundsBlender": {
+        "min": [
+          -18.5,
+          0.0,
+          5.519999980926514
+        ],
+        "max": [
+          18.5,
+          20.700000762939453,
+          7.204999923706055
+        ]
+      }
+    },
+    {
+      "id": "upper_hall",
+      "buildOrder": 50,
+      "objects": [
+        "Upper_hall_body",
+        "Upper_hall_pedestal",
+        "Upper_hall_roof",
+        "Upper_side_coping_-6.15",
+        "Upper_side_coping_6.15",
+        "Upper_side_dark_coping_-6.15",
+        "Upper_side_dark_coping_6.15"
+      ],
+      "boundsBlender": {
+        "min": [
+          -6.800000190734863,
+          6.25,
+          5.920000076293945
+        ],
+        "max": [
+          6.800000190734863,
+          16.799999237060547,
+          12.792499542236328
+        ]
+      }
+    },
+    {
+      "id": "upper_front",
+      "buildOrder": 51,
+      "objects": [
+        "Canopy_center_crest",
+        "Canopy_crest_border",
+        "Swept_canopy_dark_drip",
+        "Swept_canopy_front_fascia",
+        "Upper_central_arched_door",
+        "Upper_central_door_reveal",
+        "Upper_front_dark_perimeter",
+        "Upper_front_sculptural_white_frame",
+        "Upper_left_slender_window",
+        "Upper_left_window_stone_reveal",
+        "Upper_lower_vent_-3.4",
+        "Upper_lower_vent_3.4",
+        "Upper_lower_vent_shadow_-3.4",
+        "Upper_lower_vent_shadow_3.4",
+        "Upper_right_blade_dark_edge_5.17",
+        "Upper_right_blade_dark_edge_6.05",
+        "Upper_right_vertical_blade_5.17",
+        "Upper_right_vertical_blade_6.05"
+      ],
+      "boundsBlender": {
+        "min": [
+          -7.045936584472656,
+          6.01099967956543,
+          6.275000095367432
+        ],
+        "max": [
+          6.382500171661377,
+          8.289999961853027,
+          13.239999771118164
+        ]
+      }
+    },
+    {
+      "id": "jali_left",
+      "buildOrder": 55,
+      "objects": [
+        "jali_left_eight_point_stone_screen",
+        "jali_left_green_inlay",
+        "jali_left_shadow"
+      ],
+      "boundsBlender": {
+        "min": [
+          -3.818000078201294,
+          6.476999759674072,
+          7.611999988555908
+        ],
+        "max": [
+          -0.5664471387863159,
+          6.650000095367432,
+          12.412697792053223
+        ]
+      }
+    },
+    {
+      "id": "jali_right",
+      "buildOrder": 56,
+      "objects": [
+        "jali_right_eight_point_stone_screen",
+        "jali_right_green_inlay",
+        "jali_right_shadow"
+      ],
+      "boundsBlender": {
+        "min": [
+          0.5683410167694092,
+          6.476999759674072,
+          7.611999988555908
+        ],
+        "max": [
+          4.43165922164917,
+          6.650000095367432,
+          12.405261993408203
+        ]
+      }
+    },
+    {
+      "id": "main_dome",
+      "buildOrder": 65,
+      "objects": [
+        "Main_dome_drum",
+        "Main_dome_sixteen_green_ribs",
+        "Main_onion_dome_shell"
+      ],
+      "boundsBlender": {
+        "min": [
+          -2.6855556964874268,
+          7.48806095123291,
+          12.109999656677246
+        ],
+        "max": [
+          2.6855556964874268,
+          12.85193920135498,
+          16.874855041503906
+        ]
+      }
+    },
+    {
+      "id": "main_finial",
+      "buildOrder": 68,
+      "objects": [
+        "Main_dome_finial_crescent",
+        "Main_dome_finial_turned_spire"
+      ],
+      "boundsBlender": {
+        "min": [
+          -0.30000001192092896,
+          9.869999885559082,
+          16.780000686645508
+        ],
+        "max": [
+          0.30000001192092896,
+          10.470000267028809,
+          18.66997718811035
+        ]
+      }
+    },
+    {
+      "id": "minaret_base",
+      "buildOrder": 45,
+      "objects": [
+        "Minaret_diamond_0.64",
+        "Minaret_diamond_1.87",
+        "Minaret_foundation_step",
+        "Minaret_foundation_upper",
+        "Minaret_stepped_marble_base"
+      ],
+      "boundsBlender": {
+        "min": [
+          7.5,
+          5.449999809265137,
+          5.885000228881836
+        ],
+        "max": [
+          12.399999618530273,
+          8.550000190734863,
+          8.0
+        ]
+      }
+    },
+    {
+      "id": "minaret_shaft",
+      "buildOrder": 60,
+      "objects": [
+        "Minaret_front_dark_outline",
+        "Minaret_L_shaped_shaft",
+        "Minaret_rear_edge_10.46",
+        "Minaret_rear_edge_8.3",
+        "Minaret_top_front_band_21.4",
+        "Minaret_top_front_band_21.84",
+        "Minaret_top_front_band_22.2"
+      ],
+      "boundsBlender": {
+        "min": [
+          8.255000114440918,
+          5.880000114440918,
+          7.784999847412109
+        ],
+        "max": [
+          12.45851993560791,
+          8.072500228881836,
+          22.499876022338867
+        ]
+      }
+    },
+    {
+      "id": "minaret_crown",
+      "buildOrder": 75,
+      "objects": [
+        "Lantern_arch_moulding_00",
+        "Lantern_arch_moulding_01",
+        "Lantern_arch_moulding_02",
+        "Lantern_arch_moulding_03",
+        "Lantern_arch_moulding_04",
+        "Lantern_arch_moulding_05",
+        "Lantern_arch_moulding_06",
+        "Lantern_arch_moulding_07",
+        "Lantern_arch_recess_00",
+        "Lantern_arch_recess_01",
+        "Lantern_arch_recess_02",
+        "Lantern_arch_recess_03",
+        "Lantern_arch_recess_04",
+        "Lantern_arch_recess_05",
+        "Lantern_arch_recess_06",
+        "Lantern_arch_recess_07",
+        "Lantern_eave",
+        "Lantern_window_bar_0_-0.11",
+        "Lantern_window_bar_0_0",
+        "Lantern_window_bar_0_0.11",
+        "Lantern_window_bar_1_-0.11",
+        "Lantern_window_bar_1_0",
+        "Lantern_window_bar_1_0.11",
+        "Lantern_window_bar_2_-0.11",
+        "Lantern_window_bar_2_0",
+        "Lantern_window_bar_2_0.11",
+        "Lantern_window_bar_3_-0.11",
+        "Lantern_window_bar_3_0",
+        "Lantern_window_bar_3_0.11",
+        "Lantern_window_bar_4_-0.11",
+        "Lantern_window_bar_4_0",
+        "Lantern_window_bar_4_0.11",
+        "Lantern_window_bar_5_-0.11",
+        "Lantern_window_bar_5_0",
+        "Lantern_window_bar_5_0.11",
+        "Lantern_window_bar_6_-0.11",
+        "Lantern_window_bar_6_0",
+        "Lantern_window_bar_6_0.11",
+        "Lantern_window_bar_7_-0.11",
+        "Lantern_window_bar_7_0",
+        "Lantern_window_bar_7_0.11",
+        "Minaret_balcony_edge",
+        "Minaret_balcony_ironwork",
+        "Minaret_balcony_slab",
+        "Minaret_balcony_support",
+        "Minaret_corner_pinnacle_-1.48_-1.48",
+        "Minaret_corner_pinnacle_-1.48_1.48",
+        "Minaret_corner_pinnacle_1.48_-1.48",
+        "Minaret_corner_pinnacle_1.48_1.48",
+        "Minaret_finial_crescent",
+        "Minaret_finial_turned_spire",
+        "Minaret_front_corbel_-0.92",
+        "Minaret_front_corbel_0.92",
+        "Minaret_octagonal_lantern",
+        "Minaret_small_dome",
+        "Minaret_small_dome_ribs"
+      ],
+      "boundsBlender": {
+        "min": [
+          7.670000076293945,
+          5.269999980926514,
+          22.06999969482422
+        ],
+        "max": [
+          11.130000114440918,
+          8.729999542236328,
+          26.758386611938477
+        ]
+      }
+    },
+    {
+      "id": "boundary_front",
+      "buildOrder": 15,
+      "objects": [
+        "Front_fence_00_low_wall",
+        "Front_fence_00_metal_railings",
+        "Front_fence_01_low_wall",
+        "Front_fence_01_metal_railings",
+        "Front_fence_02_low_wall",
+        "Front_fence_02_metal_railings",
+        "Front_fence_03_low_wall",
+        "Front_fence_03_metal_railings",
+        "Front_fence_04_low_wall",
+        "Front_fence_04_metal_railings",
+        "Front_fence_05_low_wall",
+        "Front_fence_05_metal_railings",
+        "Front_fence_07_low_wall",
+        "Front_fence_07_metal_railings",
+        "Front_fence_08_low_wall",
+        "Front_fence_08_metal_railings",
+        "Front_fence_09_low_wall",
+        "Front_fence_09_metal_railings",
+        "Front_fence_10_low_wall",
+        "Front_fence_10_metal_railings",
+        "Front_fence_11_low_wall",
+        "Front_fence_11_metal_railings",
+        "Front_fence_12_low_wall",
+        "Front_fence_12_metal_railings",
+        "Front_post_00_cap",
+        "Front_post_00_capital",
+        "Front_post_00_foot",
+        "Front_post_00_shaft",
+        "Front_post_01_cap",
+        "Front_post_01_capital",
+        "Front_post_01_foot",
+        "Front_post_01_shaft",
+        "Front_post_02_cap",
+        "Front_post_02_capital",
+        "Front_post_02_foot",
+        "Front_post_02_shaft",
+        "Front_post_03_cap",
+        "Front_post_03_capital",
+        "Front_post_03_foot",
+        "Front_post_03_shaft",
+        "Front_post_04_cap",
+        "Front_post_04_capital",
+        "Front_post_04_foot",
+        "Front_post_04_shaft",
+        "Front_post_05_cap",
+        "Front_post_05_capital",
+        "Front_post_05_foot",
+        "Front_post_05_shaft",
+        "Front_post_06_cap",
+        "Front_post_06_capital",
+        "Front_post_06_foot",
+        "Front_post_06_shaft",
+        "Front_post_07_cap",
+        "Front_post_07_capital",
+        "Front_post_07_foot",
+        "Front_post_07_shaft",
+        "Front_post_08_cap",
+        "Front_post_08_capital",
+        "Front_post_08_foot",
+        "Front_post_08_shaft",
+        "Front_post_09_cap",
+        "Front_post_09_capital",
+        "Front_post_09_foot",
+        "Front_post_09_shaft",
+        "Front_post_10_cap",
+        "Front_post_10_capital",
+        "Front_post_10_foot",
+        "Front_post_10_shaft",
+        "Front_post_11_cap",
+        "Front_post_11_capital",
+        "Front_post_11_foot",
+        "Front_post_11_shaft",
+        "Front_post_12_cap",
+        "Front_post_12_capital",
+        "Front_post_12_foot",
+        "Front_post_12_shaft",
+        "Front_post_13_cap",
+        "Front_post_13_capital",
+        "Front_post_13_foot",
+        "Front_post_13_shaft"
+      ],
+      "boundsBlender": {
+        "min": [
+          -21.30500030517578,
+          -7.670000076293945,
+          0.23999999463558197
+        ],
+        "max": [
+          21.30500030517578,
+          -7.03000020980835,
+          3.309999942779541
+        ]
+      }
+    },
+    {
+      "id": "boundary_left",
+      "buildOrder": 15,
+      "objects": [
+        "boundary_left_fence_00_low_wall",
+        "boundary_left_fence_00_metal_railings",
+        "boundary_left_fence_01_low_wall",
+        "boundary_left_fence_01_metal_railings",
+        "boundary_left_fence_02_low_wall",
+        "boundary_left_fence_02_metal_railings",
+        "boundary_left_fence_03_low_wall",
+        "boundary_left_fence_03_metal_railings",
+        "boundary_left_fence_04_low_wall",
+        "boundary_left_fence_04_metal_railings",
+        "boundary_left_fence_05_low_wall",
+        "boundary_left_fence_05_metal_railings",
+        "boundary_left_fence_06_low_wall",
+        "boundary_left_fence_06_metal_railings",
+        "boundary_left_post_00_cap",
+        "boundary_left_post_00_capital",
+        "boundary_left_post_00_foot",
+        "boundary_left_post_00_shaft",
+        "boundary_left_post_01_cap",
+        "boundary_left_post_01_capital",
+        "boundary_left_post_01_foot",
+        "boundary_left_post_01_shaft",
+        "boundary_left_post_02_cap",
+        "boundary_left_post_02_capital",
+        "boundary_left_post_02_foot",
+        "boundary_left_post_02_shaft",
+        "boundary_left_post_03_cap",
+        "boundary_left_post_03_capital",
+        "boundary_left_post_03_foot",
+        "boundary_left_post_03_shaft",
+        "boundary_left_post_04_cap",
+        "boundary_left_post_04_capital",
+        "boundary_left_post_04_foot",
+        "boundary_left_post_04_shaft",
+        "boundary_left_post_05_cap",
+        "boundary_left_post_05_capital",
+        "boundary_left_post_05_foot",
+        "boundary_left_post_05_shaft",
+        "boundary_left_post_06_cap",
+        "boundary_left_post_06_capital",
+        "boundary_left_post_06_foot",
+        "boundary_left_post_06_shaft"
+      ],
+      "boundsBlender": {
+        "min": [
+          -21.30500030517578,
+          -7.349999904632568,
+          0.23999999463558197
+        ],
+        "max": [
+          -20.69499969482422,
+          22.31999969482422,
+          2.6600000858306885
+        ]
+      }
+    },
+    {
+      "id": "boundary_right",
+      "buildOrder": 15,
+      "objects": [
+        "boundary_right_fence_00_low_wall",
+        "boundary_right_fence_00_metal_railings",
+        "boundary_right_fence_01_low_wall",
+        "boundary_right_fence_01_metal_railings",
+        "boundary_right_fence_02_low_wall",
+        "boundary_right_fence_02_metal_railings",
+        "boundary_right_fence_03_low_wall",
+        "boundary_right_fence_03_metal_railings",
+        "boundary_right_fence_04_low_wall",
+        "boundary_right_fence_04_metal_railings",
+        "boundary_right_fence_05_low_wall",
+        "boundary_right_fence_05_metal_railings",
+        "boundary_right_fence_06_low_wall",
+        "boundary_right_fence_06_metal_railings",
+        "boundary_right_post_00_cap",
+        "boundary_right_post_00_capital",
+        "boundary_right_post_00_foot",
+        "boundary_right_post_00_shaft",
+        "boundary_right_post_01_cap",
+        "boundary_right_post_01_capital",
+        "boundary_right_post_01_foot",
+        "boundary_right_post_01_shaft",
+        "boundary_right_post_02_cap",
+        "boundary_right_post_02_capital",
+        "boundary_right_post_02_foot",
+        "boundary_right_post_02_shaft",
+        "boundary_right_post_03_cap",
+        "boundary_right_post_03_capital",
+        "boundary_right_post_03_foot",
+        "boundary_right_post_03_shaft",
+        "boundary_right_post_04_cap",
+        "boundary_right_post_04_capital",
+        "boundary_right_post_04_foot",
+        "boundary_right_post_04_shaft",
+        "boundary_right_post_05_cap",
+        "boundary_right_post_05_capital",
+        "boundary_right_post_05_foot",
+        "boundary_right_post_05_shaft",
+        "boundary_right_post_06_cap",
+        "boundary_right_post_06_capital",
+        "boundary_right_post_06_foot",
+        "boundary_right_post_06_shaft"
+      ],
+      "boundsBlender": {
+        "min": [
+          20.69499969482422,
+          -7.349999904632568,
+          0.23999999463558197
+        ],
+        "max": [
+          21.30500030517578,
+          22.31999969482422,
+          2.6600000858306885
+        ]
+      }
+    },
+    {
+      "id": "boundary_rear",
+      "buildOrder": 15,
+      "objects": [
+        "Rear_boundary_coping",
+        "Rear_boundary_wall"
+      ],
+      "boundsBlender": {
+        "min": [
+          -21.100000381469727,
+          21.825000762939453,
+          0.23000000417232513
+        ],
+        "max": [
+          21.100000381469727,
+          22.174999237060547,
+          1.840000033378601
+        ]
+      }
+    },
+    {
+      "id": "entrance_gate_left",
+      "buildOrder": 80,
+      "objects": [
+        "entrance_gate_left_scrollwork",
+        "entrance_gate_left_wrought_iron_leaf"
+      ],
+      "boundsBlender": {
+        "min": [
+          -2.7699999809265137,
+          -7.369999885559082,
+          0.3499999940395355
+        ],
+        "max": [
+          -0.02499997615814209,
+          -7.329999923706055,
+          3.138582706451416
+        ]
+      }
+    },
+    {
+      "id": "entrance_gate_right",
+      "buildOrder": 80,
+      "objects": [
+        "entrance_gate_right_scrollwork",
+        "entrance_gate_right_wrought_iron_leaf"
+      ],
+      "boundsBlender": {
+        "min": [
+          0.02499997615814209,
+          -7.369999885559082,
+          0.3499999940395355
+        ],
+        "max": [
+          2.7699999809265137,
+          -7.329999923706055,
+          3.138582706451416
+        ]
+      }
+    }
+  ]
+}
